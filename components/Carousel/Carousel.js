@@ -22,17 +22,20 @@ class Carousel {
         console.log('this works')
         this.currentIndex +=1;
         
+        
         if (this.currentIndex >= this.images.length){
             this.currentIndex = 0;
         }
         console.log('currentindex' ,this.currentIndex)
         console.log('current image',this.images[this.currentIndex])
+        this.images[this.currentIndex].style.display="flex"
+        this.images[this.currentIndex].style.width="100%"
         
     }
 
     decrement(){
         console.log('this works')
-        this.currentIndex -=1;
+        this.currentIndex--;
         
         if (this.currentIndex < 0){
             this.currentIndex = this.images.length-1;
@@ -40,6 +43,8 @@ class Carousel {
 
         console.log('currentindex' ,this.currentIndex)
         console.log('current image',this.images[this.currentIndex])
+        this.images[this.currentIndex].style.display="flex"
+        this.images[this.currentIndex].style.width="100%"
     }
 
 }
