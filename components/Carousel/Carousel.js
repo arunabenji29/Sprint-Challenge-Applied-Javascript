@@ -11,7 +11,7 @@ class Carousel {
         this.images.forEach(eachImage => console.log(eachImage))
         // console.log('all images',this.images)
         this.currentIndex = 0;
-
+        this.images[this.currentIndex].style.display = "flex"
         this.right.addEventListener('click', () => this.increment())
         this.left.addEventListener('click',() => this.decrement())
     }
@@ -19,32 +19,34 @@ class Carousel {
     
 
     increment(){
-        console.log('this works')
+        // console.log('this works')
         this.currentIndex +=1;
-        
+        const selectImages = document.querySelectorAll('img');
+        selectImages.forEach(selectImage => selectImage.style.display = 'none')
         
         if (this.currentIndex >= this.images.length){
             this.currentIndex = 0;
         }
-        console.log('currentindex' ,this.currentIndex)
-        console.log('current image',this.images[this.currentIndex])
+        // console.log('currentindex' ,this.currentIndex)
+        // console.log('current image',this.images[this.currentIndex])
         this.images[this.currentIndex].style.display="flex"
-        this.images[this.currentIndex].style.width="100%"
+        
         
     }
 
     decrement(){
-        console.log('this works')
+        // console.log('this works')
         this.currentIndex--;
-        
+        const selectImages = document.querySelectorAll('img');
+        selectImages.forEach(selectImage => selectImage.style.display = 'none')
         if (this.currentIndex < 0){
             this.currentIndex = this.images.length-1;
         }
 
-        console.log('currentindex' ,this.currentIndex)
-        console.log('current image',this.images[this.currentIndex])
+        // console.log('currentindex' ,this.currentIndex)
+        // console.log('current image',this.images[this.currentIndex])
         this.images[this.currentIndex].style.display="flex"
-        this.images[this.currentIndex].style.width="100%"
+       
     }
 
 }
