@@ -32,13 +32,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+    Document Object Model. It is a API between HTML and the browser. It gives an interface to interact, manipulate the page , changing 
+    document structure and styling.
+
 2. What is an event?
+
+    Every interaction a user has with a site is known as an event, a click, moving the mouse, scrolling the page, pressing a key on the keyboard, these are all events on the page and the browser can detect all of them.
 
 3. What is an event listener?
 
+    The EventListener interface represents an object that can handle an event dispatched by an EventTarget object. In simple words, it 
+    does an action when the user interacts in a particular element or container.
+
 4. Why would we convert a NodeList into an Array?
+    Nodelist has only few methods of an Array. If we need to use more methods from an Array then we need to convert the nodelist to an Array.
 
 5. What is a component?
+
+    A component is an entire feature which can be used whenver needed and can be reused when in demand. For example a Tab navigation system can be implemented as a whole feature and can be reused either to add more tabs and tab content or if we need the feature to be reused in a different application or at different places within the same application.
 
 ### Git Set up
 
