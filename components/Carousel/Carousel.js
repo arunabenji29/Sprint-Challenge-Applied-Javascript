@@ -1,17 +1,23 @@
 class Carousel {
     constructor(carouselElement){
         this.carouselElement = carouselElement;
-        // console.log(this.carouselElement);
+
+        //select right button from the carousel
         this.right = this.carouselElement.querySelector('.right-button');
-        // console.log('right button' ,this.right)
+
+        //select left button from the carousel
         this.left = this.carouselElement.querySelector('.left-button');
-        // console.log('left button' ,this.left)
+
+        //select all the images from the carousel
         this.images = this.carouselElement.querySelectorAll('img')
-        console.log('Images length',this.images.length)
-        this.images.forEach(eachImage => console.log(eachImage))
-        // console.log('all images',this.images)
+        
+       //set currentIndex 
         this.currentIndex = 0;
+
+        //set an image on the page initially
         this.images[this.currentIndex].style.display = "flex"
+
+        //event listeners on the right and left button
         this.right.addEventListener('click', () => this.increment())
         this.left.addEventListener('click',() => this.decrement())
     }
@@ -19,32 +25,39 @@ class Carousel {
     
 
     increment(){
-        // console.log('this works')
+        //increment the currentIndex after the right click
         this.currentIndex +=1;
+
+        //query all images and set display to none
         const selectImages = document.querySelectorAll('img');
         selectImages.forEach(selectImage => selectImage.style.display = 'none')
         
+        //if currentIndex exceeds the length of the images set the current index to 0
         if (this.currentIndex >= this.images.length){
             this.currentIndex = 0;
         }
-        // console.log('currentindex' ,this.currentIndex)
-        // console.log('current image',this.images[this.currentIndex])
+        
+        //set the display of the current image to flex
         this.images[this.currentIndex].style.display="flex"
+        
         
         
     }
 
     decrement(){
-        // console.log('this works')
+        //decrement the currentIndex after the right click
         this.currentIndex--;
+
+        //query all images and set display to none
         const selectImages = document.querySelectorAll('img');
         selectImages.forEach(selectImage => selectImage.style.display = 'none')
+        
+        //if currentIndex is less than 0, set the current index to the last image index
         if (this.currentIndex < 0){
             this.currentIndex = this.images.length-1;
         }
 
-        // console.log('currentindex' ,this.currentIndex)
-        // console.log('current image',this.images[this.currentIndex])
+        //set the display of the current image to flex
         this.images[this.currentIndex].style.display="flex"
        
     }
